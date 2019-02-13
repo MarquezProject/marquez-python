@@ -23,9 +23,6 @@ jobs:
   release:
     <<: *defaults
     working_directory: ~/marquez_python
-    environment:
-      TWINE_USERNAME: ashulman
-      TWINE_PASSWORD: TM99bdx9!xyz
     steps:
       - checkout
       - run: pip install --user twine
@@ -44,10 +41,8 @@ workflows:
           requires:
             - build
       - release:
-          requires:
-            - test
           filters:
             tags:
               only: /^[0-9]+(\.[0-9]+){2}$/
             branches:
-              only: master
+              ignore: /.*/
