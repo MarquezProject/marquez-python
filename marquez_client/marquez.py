@@ -1,8 +1,9 @@
 import logging
 import os
 
-from marquez_codegen_client import configuration, Configuration, ApiClient, DatasetsApi, JobsApi, NamespacesApi, \
-    CreateNamespace, CreateJobRun, CreateJob
+from marquez_codegen_client import (ApiClient, Configuration, CreateJob,
+                                    CreateJobRun, CreateNamespace, DatasetsApi,
+                                    JobsApi, NamespacesApi)
 
 
 class MarquezClient(object):
