@@ -25,9 +25,9 @@ jobs:
 
   release:
     <<: *defaults
-    working_directory: ~/marquez_python
     steps:
       - checkout
+      - run: env
       - run: ./docker/release_check.sh 
       - run: pip install --user twine
       - run: python setup.py sdist
